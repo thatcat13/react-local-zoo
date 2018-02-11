@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function AddAnimal(props) {
   const addAnimalStyles = {
@@ -51,7 +52,7 @@ function AddAnimal(props) {
         <input placeholder='fish, typing fast'></input>
         <label style={labelStyles}>Enter Dislikes:</label>
         <input placeholder='loud noises'></input>
-        <button style={buttonStyles}>DONE</button>
+        <button style={buttonStyles}><Link to='/'>DONE</Link></button>
       </form>
     </div>
   );

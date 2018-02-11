@@ -1,6 +1,7 @@
 import React from 'react';
 import Animal from './Animal';
 import Header from './Header';
+import { Link } from 'react-router-dom';
 
 const masterAnimalList = [
   {
@@ -100,6 +101,7 @@ function AnimalList() {
         <div style={secondaryListContainer}>
           <h1>Animal Info</h1>
           <button>EDIT ANIMAL INFO</button>
+          <button><Link to='/addanimal'>ADD A NEW ANIMAL</Link></button>
           {masterAnimalList.map((animal, index) =>
             <Animal latinName={animal.latinName}
               commonName={animal.commonName}
