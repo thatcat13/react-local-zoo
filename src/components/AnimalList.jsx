@@ -81,7 +81,6 @@ function AnimalList() {
   const mainListContainer = {
     display: 'flex',
     justifyContent: 'center'
-
   };
   const secondaryListContainer = {
     display: 'flex',
