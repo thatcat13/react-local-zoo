@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Animal(props){
   const animalListStyle = {
     listStyle: 'none',
     padding: 0
-  }
+  };
   return (
     <div>
       <ul style={animalListStyle}>
         <li>Latin Name: {props.latinName}</li>
         <li>Common Name: {props.commonName}</li>
-        <li>Animal Name: {props.name}</li>
+        <li>Animal Name: {props.animalName}</li>
         <li>Age: {props.age}</li>
         <li>Diet: {props.diet}</li>
         <li>housing: {props.housing}</li>

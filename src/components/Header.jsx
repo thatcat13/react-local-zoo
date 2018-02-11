@@ -1,13 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Switch, Route } from 'react-router-dom';
+import React from 'react';
 
 function Header() {
   return (
     <div>
       Header is working!
-      <Switch>
-      </Switch>
     </div>
   );
 }

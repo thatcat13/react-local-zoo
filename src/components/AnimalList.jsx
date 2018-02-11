@@ -1,6 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Switch, Route } from 'react-router-dom';
+import React from 'react';
 import Animal from './Animal';
 
 const masterAnimalList = [
@@ -76,9 +74,9 @@ const masterAnimalList = [
     likes: 'all things twee',
     dislikes: 'terrible color palettes'
   }
-]
+];
 
-function AnimalList(props) {
+function AnimalList() {
   return (
     <div>
       <div>
