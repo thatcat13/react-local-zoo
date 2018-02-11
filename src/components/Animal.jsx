@@ -9,16 +9,16 @@ function Animal(props){
   return (
     <div>
       <ul style={animalListStyle}>
-        <li>{props.latinName}</li>
-        <li>{props.commonName}</li>
-        <li>{props.name}</li>
-        <li>{props.age}</li>
-        <li>{props.diet}</li>
-        <li>{props.housing}</li>
-        <li>{props.caretakers}</li>
-        <li>{props.sex}</li>
-        <li>{props.likes}</li>
-        <li>{props.dislikes}</li>
+        <li>Latin Name: {props.latinName}</li>
+        <li>Common Name: {props.commonName}</li>
+        <li>Animal Name: {props.name}</li>
+        <li>Age: {props.age}</li>
+        <li>Diet: {props.diet}</li>
+        <li>housing: {props.housing}</li>
+        <li>Caretakers: {props.caretakers}</li>
+        <li>Sex: {props.sex}</li>
+        <li>Likes: {props.likes}</li>
+        <li>Dislikes: {props.dislikes}</li>
       </ul>
       <hr/>
     </div>
