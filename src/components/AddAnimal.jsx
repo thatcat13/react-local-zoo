@@ -1,10 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-function AddAnimal() {
+function AddAnimal(props) {
   return (
     <div>
-      AddAnimal is working!
+      <div>
+        <h1>Add a New Fantastic Animal</h1>
+      </div>
+      <form>
+        <label>Enter Latin Name:</label>
+        <input placeholder='Lutra Lutra'></input>
+        <label>Enter Common Name:</label>
+        <input placeholder='European Otter'></input>
+        <label>Enter Animal Name:</label>
+        <input placeholder='Linda Otter'></input>
+        <label>Enter Age:</label>
+        <input placeholder='1'></input>
+        <label>Enter Diet:</label>
+        <input placeholder='omnivore'></input>
+        <label>Enter Housing:</label>
+        <input placeholder='Lawyer Office Zone'></input>
+        <label>Enter Caretakers:</label>
+        <input placeholder='2'></input>
+        <label>Enter Sex:</label>
+        <input placeholder='F'></input>
+        <label>Enter Likes:</label>
+        <input placeholder='fish, typing fast'></input>
+        <label>Enter Dislikes:</label>
+        <input placeholder='loud noises'></input>
+      </form>
     </div>
   );
 }
