@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from "react-dom";
-import Header from './Header';
 import AnimalList from './AnimalList';
 import AddAnimal from './AddAnimal';
 import { Switch, Route } from 'react-router-dom';
@@ -19,10 +17,10 @@ function App() {
           body {
             font-family: 'Arial Black', sans-serif;
             width: 100%;
+            background-color: #9b0812;
+            color: #fad605;
           }
           `}</style>
-      <Header />
-      App is working!
       <Switch>
         <Route exact path='/' component={AnimalList} />
         <Route path='/addanimal' component={AddAnimal} />

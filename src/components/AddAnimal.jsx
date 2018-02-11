@@ -27,6 +27,7 @@ function AddAnimal(props) {
         <input placeholder='fish, typing fast'></input>
         <label>Enter Dislikes:</label>
         <input placeholder='loud noises'></input>
+        <button>DONE</button>
       </form>
     </div>
   );
