@@ -6,7 +6,7 @@ function Animal(props){
     listStyle: 'none',
     padding: 0
   };
-  
+
   const animalInformation =
     <div>
       <ul style={animalListStyle}>
@@ -41,7 +41,8 @@ Animal.propTypes = {
   caretakers: PropTypes.number,
   sex: PropTypes.string,
   likes: PropTypes.string,
-  dislikes: PropTypes.string
+  dislikes: PropTypes.string,
+  animalId: PropTypes.string.isRequired
 };
 
 export default Animal;

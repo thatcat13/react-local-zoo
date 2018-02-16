@@ -6,9 +6,18 @@ function AddAnimalForm(props) {
 
   function handleNewAnimalFormSubmission(event) {
     event.preventDefault();
-    props.onNewAnimalCreation({latinName: _latinName.value, commonName: _commonName.value, animalName: _animalName.value, age: _age.value, diet: _diet.value, housing: _housing.value, caretakers: _caretakers.value, sex: _sex.value, likes: _likes.value, dislikes: _dislikes.value, id: v4()});
+    props.onNewAnimalCreation({latinName: _latinName.value, commonName: _commonName.value, animalName: _animalName.value, age: _age.value, diet: _diet.value, housing: _housing.value, caretakers: _caretakers.value, sex: _sex.value, likes: _likes.value, dislikes: _dislikes.value});
 
-    _latinName, _commonName, _animalName, _age, _diet, _housing, _caretakers, _sex, _likes, _dislikes = '';
+    _latinName.value = '';
+    _commonName.value = '';
+    _animalName.value = '';
+    _age.value = '';
+    _diet.value = '';
+    _housing.value = '';
+    _caretakers.value = '';
+    _sex.value = '';
+    _likes.value = '';
+    _dislikes.value = '';
   }
   //onNewAnimalCreation() is a PROP, guys (see below)--it references the handleAddingNewAnimalToList() callback from the App component.
 

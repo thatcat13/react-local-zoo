@@ -4,6 +4,7 @@ import AddAnimalForm from './AddAnimalForm';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
 import { v4 } from 'uuid';
+import Header from './Header';
 
 class App extends React.Component {
 
@@ -24,7 +25,7 @@ class App extends React.Component {
     //{} is the TARGET, the object being created
     //this.state.masterAnimalList is the 1st SOURCE object, or the data to put into the TARGET; this one is a SLICE of state, the NEW animal to be piled on top of the existing animal list
     //{[newAnimalId: newAnimal]} is the 2nd SOURCE object that's a key-value pair
-    newMasterAnimalList[newAnimalId] = this.setState({masterAnimalList: newMasterAnimalList});
+    this.setState({masterAnimalList: newMasterAnimalList});
   }
 
   render() {
@@ -45,6 +46,7 @@ class App extends React.Component {
           }
           `
         }</style>
+        <Header />
         <Switch>
           <Route exact path='/' render={()=><AnimalList animalList={this.state.masterAnimalList} />} />
           //here I'm providing masterAnimalList as a prop to AnimalList

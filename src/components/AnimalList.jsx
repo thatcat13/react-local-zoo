@@ -1,6 +1,5 @@
 import React from 'react';
 import Animal from './Animal';
-import Header from './Header';
 import PropTypes from 'prop-types';
 
 function AnimalList(props) {
@@ -22,23 +21,22 @@ function AnimalList(props) {
 
   return (
     <div>
-      <Header />
       <div style={mainListContainer}>
         <div style={secondaryListContainer}>
-          <h1>Animal Info</h1>
+          <h1>Current Residents:</h1>
           {Object.keys(props.animalList).map(function(animalId) {
             let animal = props.animalList[animalId];
             return <Animal latinName={animal.latinName}
-                commonName={animal.commonName}
-                animalName={animal.animalName}
-                age={animal.age}
-                diet={animal.diet}
-                housing={animal.housing}
-                caretakers={animal.caretakers}
-                sex={animal.sex}
-                likes={animal.likes}
-                dislikes={animal.dislikes}
-                key={animal.id}/>;
+              commonName={animal.commonName}
+              animalName={animal.animalName}
+              age={animal.age}
+              diet={animal.diet}
+              housing={animal.housing}
+              caretakers={animal.caretakers}
+              sex={animal.sex}
+              likes={animal.likes}
+              dislikes={animal.dislikes}
+              key={animal.id}/>;
           })}
         </div>
       </div>
