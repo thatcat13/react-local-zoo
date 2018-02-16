@@ -28,7 +28,9 @@ function AnimalList() {
         <div style={secondaryListContainer}>
           <h1>Animal Info</h1>
           <button><Link to='/addanimalform'>ADD A NEW ANIMAL</Link></button>
-          {props.animalList.map((animal, index) =>
+          {Object.keys(props.animalList).map(function(animalId) {
+            let animal = props.animalList[animalId];
+            return
             <Animal latinName={animal.latinName}
               commonName={animal.commonName}
               animalName={animal.animalName}
@@ -39,8 +41,8 @@ function AnimalList() {
               sex={animal.sex}
               likes={animal.likes}
               dislikes={animal.dislikes}
-              key={index}/>
-          )}
+              key={animal.id}/>
+          })}
         </div>
       </div>
     </div>//main div
@@ -48,7 +50,7 @@ function AnimalList() {
 }
 
 AnimalList.propTypes = {
-  animalList: PropTypes.array
+  animalList: PropTypes.object
 };
 
 export default AnimalList;

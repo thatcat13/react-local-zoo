@@ -6,7 +6,7 @@ function Animal(props){
     listStyle: 'none',
     padding: 0
   };
-  return (
+  const animalInformation =
     <div>
       <ul style={animalListStyle}>
         <li>Latin Name: {props.latinName}</li>
@@ -22,7 +22,12 @@ function Animal(props){
       </ul>
       <hr/>
     </div>
-  );
+    return (
+      <div>
+        {animalInformation}
+      </div>
+    );
+
 }
 
 Animal.propTypes = {
@@ -35,7 +40,7 @@ Animal.propTypes = {
   caretakers: PropTypes.number,
   sex: PropTypes.string,
   likes: PropTypes.string,
-  dislikes: PropTypes.string,
+  dislikes: PropTypes.string
 };
 
 export default Animal;

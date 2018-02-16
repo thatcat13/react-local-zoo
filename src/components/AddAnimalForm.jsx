@@ -7,7 +7,7 @@ function AddAnimalForm(props) {
 
   function handleNewAnimalFormSubmission(event) {
     event.preventDefault();
-    props.onNewAnimalCreation({latinName: _latinName.value, commonName: _commonName.value, animalName: _animalName.value, age: _age.value, diet: _diet.value, housing: _housing.value, caretakers: _caretakers.value, sex: _sex.value, likes: _likes.value, dislikes: _dislikes.value});
+    props.onNewAnimalCreation({latinName: _latinName.value, commonName: _commonName.value, animalName: _animalName.value, age: _age.value, diet: _diet.value, housing: _housing.value, caretakers: _caretakers.value, sex: _sex.value, likes: _likes.value, dislikes: _dislikes.value, id: v4()});
 
     _latinName, _commonName, _animalName, _age, _diet, _housing, _caretakers, _sex, _likes, _dislikes = '';
   }
