@@ -24,26 +24,33 @@ function AddAnimalForm(props) {
   const addAnimalStyles = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignContent: 'center',
+    textAlign: 'center',
     border: '1px solid rgba(250, 214, 5, 0.5)',
     borderRadius: '4px',
     textShadow: '2px 2px #482e2f',
     padding: '30px',
     width: 'auto',
+    marginTop: '50px'
   };
 
   const formStyles = {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignContent: 'center'
   };
   const labelStyles = {
     padding: 10,
+    fontSize: '1em'
   };
   const buttonStyles = {
-    width: 70,
-    height: 35,
+    width: 200,
+    height: 50,
     textAlign: 'center',
-    marginTop: 10
+    marginTop: 10,
+    fontSize: '1em',
+    fontWeight: 'bolder',
+    alignSelf: 'center'
   };
 
   return (
@@ -51,50 +58,50 @@ function AddAnimalForm(props) {
       <div>
         <h1>Add a New Fantastic Animal</h1>
       </div>
-      <form onSubmit={handleNewAnimalFormSubmission}>
-        <input
+      <form style={formStyles} onSubmit={handleNewAnimalFormSubmission}>
+        <input style={labelStyles}
           type='text'
           id='latinName'
           placeholder='Latin Name'
           ref={(input) => {_latinName = input;}}/>
-        <input
+        <input style={labelStyles}
           type='text'
           id='commonName'
           placeholder='Common Name'
           ref={(input) => {_commonName = input;}}/>
-        <input
+        <input style={labelStyles}
           id='animalName'
           placeholder='Animal Name'
           ref={(input) => {_animalName = input;}}/>
-        <input
+        <input style={labelStyles}
           id='animalName'
           placeholder='Age'
           ref={(input) => {_age = input;}}/>
-        <input
+        <input style={labelStyles}
           id='animalName'
           placeholder='Diet'
           ref={(input) => {_diet = input;}}/>
-        <input
+        <input style={labelStyles}
           id='animalName'
           placeholder='Housing'
           ref={(input) => {_housing = input;}}/>
-        <input
+        <input style={labelStyles}
           id='animalName'
           placeholder='Number of Caretakers'
           ref={(input) => {_caretakers = input;}}/>
-        <input
+        <input style={labelStyles}
           id='animalName'
           placeholder='Sex'
           ref={(input) => {_sex = input;}}/>
-        <input
+        <input style={labelStyles}
           id='animalName'
           placeholder='Likes'
           ref={(input) => {_likes = input;}}/>
-        <input
+        <input style={labelStyles}
           id='animalName'
           placeholder='Dislikes'
           ref={(input) => {_dislikes = input;}}/>
-        <button type='submit'>Add Fantastic Animal!</button>
+        <button style={buttonStyles} type='submit'>Add Fantastic Animal!</button>
       </form>
     </div>
   );
