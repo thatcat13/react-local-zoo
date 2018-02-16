@@ -4,7 +4,7 @@ import Header from './Header';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-function AnimalList() {
+function AnimalList(props) {
   const mainListContainer = {
     display: 'flex',
     justifyContent: 'center'
@@ -30,18 +30,18 @@ function AnimalList() {
           <button><Link to='/addanimalform'>ADD A NEW ANIMAL</Link></button>
           {Object.keys(props.animalList).map(function(animalId) {
             let animal = props.animalList[animalId];
-            return
+            return;
             <Animal latinName={animal.latinName}
-              commonName={animal.commonName}
-              animalName={animal.animalName}
-              age={animal.age}
-              diet={animal.diet}
-              housing={animal.housing}
-              caretakers={animal.caretakers}
-              sex={animal.sex}
-              likes={animal.likes}
-              dislikes={animal.dislikes}
-              key={animal.id}/>
+                commonName={animal.commonName}
+                animalName={animal.animalName}
+                age={animal.age}
+                diet={animal.diet}
+                housing={animal.housing}
+                caretakers={animal.caretakers}
+                sex={animal.sex}
+                likes={animal.likes}
+                dislikes={animal.dislikes}
+                key={animal.id}/>;
           })}
         </div>
       </div>

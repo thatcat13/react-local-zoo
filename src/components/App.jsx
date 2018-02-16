@@ -12,12 +12,12 @@ class App extends React.Component {
     this.state = {
       masterAnimalList: {}
       //masterAnimalList is an object instead of an array;
-    }
+    };
     this.handleAddingNewAnimalToList = this.handleAddingNewAnimalToList.bind(this);
   }
 
   handleAddingNewAnimalToList(newAnimal){
-    let newAnimalId = v4()
+    let newAnimalId = v4();
     let newMasterAnimalList = Object.assign({}, this.state.masterAnimalList, {
       [newAnimalId]: newAnimal
     });

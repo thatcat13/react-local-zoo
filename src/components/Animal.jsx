@@ -22,12 +22,12 @@ function Animal(props){
         <li>Dislikes: {props.dislikes}</li>
       </ul>
       <hr/>
+    </div>;
+  return (
+    <div>
+      {animalInformation}
     </div>
-    return (
-      <div>
-        {animalInformation}
-      </div>
-    );
+  );
 
 }
 
