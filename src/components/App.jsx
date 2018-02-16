@@ -36,7 +36,8 @@ class App extends React.Component {
           likes: 'all things twee',
           dislikes: 'terrible color palettes'
         }
-      }
+      },
+      selectedAnimal: null
       //masterAnimalList is an object instead of an array;
     };
     this.handleAddingNewAnimalToList = this.handleAddingNewAnimalToList.bind(this);
@@ -53,6 +54,10 @@ class App extends React.Component {
 
     //{[newAnimalId: newAnimal]} is the 2nd SOURCE object that's a key-value pair
     this.setState({masterAnimalList: newMasterAnimalList});
+  }
+
+  handleDeletingSelectedAnimal(animalId){
+    this.setState({selectedAnimal: animalId});
   }
 
   render() {
@@ -79,7 +84,7 @@ class App extends React.Component {
           //here I'm providing masterAnimalList as a prop to AnimalList
           //access the list by calling this.state.masterAnimalList (it's now a state value)
           //prop is 'animalList' in AnimalList and state value is called 'masterAnimalList' in App
-          <Route path='/addanimalform' render={()=><AddAnimalForm onNewAnimalCreation= {this.handleAddingNewAnimalToList} />} />
+          <Route path='/addanimalform' render={()=><AddAnimalForm onNewAnimalCreation= {this.handleAddingNewAnimalToList} onAnimalSelection={this.handleDeletingSelectedAnimal} selectedAnimal={this.state.selectedAnimal} />} />
 
           <Route component={Error404} />
         </Switch>

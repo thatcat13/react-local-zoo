@@ -19,6 +19,13 @@ function AnimalList(props) {
     margin: 50
   };
 
+  function DeleteAnimal(props) {
+    let animalToBeDeleted = null;
+    if (props.selectedAnimal != null){
+      animalToBeDeleted =  <Animal
+        selectedAnimal={props.animalList[props.selectedAnimal]}/>;
+    }
+  }
   return (
     <div>
       <div style={mainListContainer}>
@@ -38,16 +45,21 @@ function AnimalList(props) {
               sex={animal.sex}
               likes={animal.likes}
               dislikes={animal.dislikes}
-              key={animal.id}/>;
+              key={animal.id}
+              onAnimalSelection={props.onAnimalSelection}
+              <button onClick={DeleteAnimal}>Delete Animal</button>
+              />;
           })}
         </div>
       </div>
-    </div>//main div
+    </div>
   );
 }
 
 AnimalList.propTypes = {
-  animalList: PropTypes.object
+  animalList: PropTypes.object,
+  onAnimalSelection: PropTypes.func.isRequired,
+  selectedAnimal: PropTypes.string
 };
 
 export default AnimalList;
