@@ -2,81 +2,7 @@ import React from 'react';
 import Animal from './Animal';
 import Header from './Header';
 import { Link } from 'react-router-dom';
-
-const masterAnimalList = [
-  {
-    latinName: 'Lutra Lutra',
-    commonName: 'European Otter',
-    animalName: 'Linda Otter',
-    age: 1,
-    diet: 'omnivore',
-    housing: 'Lawyer Office Zone',
-    caretakers: 2,
-    sex: 'F',
-    likes: 'fish, typing fast',
-    dislikes: 'loud noises'
-  },
-  {
-    latinName: 'Talpa Europa',
-    commonName: 'European Mole',
-    animalName: 'Mole',
-    age: 1,
-    diet: 'carnivore',
-    housing: 'Underground Zone',
-    caretakers: 2,
-    sex: 'M',
-    likes: 'earthworms',
-    dislikes: 'bright light'
-  },
-  {
-    latinName: 'Oryctolagus Cuniculus',
-    commonName: 'European Rabbit',
-    animalName: 'Rabbit',
-    age: 7,
-    diet: 'herbivore',
-    housing: 'Kitchen Zone',
-    caretakers: 2,
-    sex: 'M',
-    likes: 'cooking',
-    dislikes: 'cooks who are slow'
-  },
-  {
-    latinName: 'Meles Meles',
-    commonName: 'European Badger',
-    animalName: 'Clive Badger, Esq.',
-    age: 5,
-    diet: 'omnivore',
-    housing: 'Litigation Zone',
-    caretakers: 1,
-    sex: 'M',
-    likes: 'loyalty',
-    dislikes: 'reckless behavior'
-  },
-  {
-    latinName: 'Castor Fiber',
-    commonName: 'European Beaver',
-    animalName: 'Beaver',
-    age: 4,
-    diet: 'herbivore',
-    housing: 'Litigation Zone',
-    caretakers: 1,
-    sex: 'M',
-    likes: 'helping Mr. Fox',
-    dislikes: 'loud noises'
-  },
-  {
-    latinName: 'Mustela Nivalis',
-    commonName: 'Common Weasel',
-    animalName: 'Wes Anderson',
-    age: 5,
-    diet: 'herbivore',
-    housing: 'American Film Director Zone',
-    caretakers: 0,
-    sex: 'M',
-    likes: 'all things twee',
-    dislikes: 'terrible color palettes'
-  }
-];
+import PropTypes from 'prop-types';
 
 function AnimalList() {
   const mainListContainer = {
@@ -94,15 +20,15 @@ function AnimalList() {
     width: 'auto',
     marginTop: 75
   };
+
   return (
     <div>
       <Header />
       <div style={mainListContainer}>
         <div style={secondaryListContainer}>
           <h1>Animal Info</h1>
-          <button>EDIT ANIMAL INFO</button>
-          <button><Link to='/addanimal'>ADD A NEW ANIMAL</Link></button>
-          {masterAnimalList.map((animal, index) =>
+          <button><Link to='/addanimalform'>ADD A NEW ANIMAL</Link></button>
+          {props.animalList.map((animal, index) =>
             <Animal latinName={animal.latinName}
               commonName={animal.commonName}
               animalName={animal.animalName}
@@ -117,8 +43,12 @@ function AnimalList() {
           )}
         </div>
       </div>
-    </div>
+    </div>//main div
   );
 }
+
+AnimalList.propTypes = {
+  animalList: PropTypes.array
+};
 
 export default AnimalList;
