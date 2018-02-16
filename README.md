@@ -40,7 +40,7 @@ Additionally, the previous component tree was less based on data and instead bas
 
 Here is the updated component tree that accurately respresents the state and how it relates to other components within the app:
 
-![](updated-component-tree.jpg)
+![](updated-component-tree.JPG)
 
 #### My thoughts on the differences in development between Angular and React (2/9/28):
 

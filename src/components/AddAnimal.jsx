@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function AddAnimal(props) {
+function AddAnimalForm(props) {
   const addAnimalStyles = {
     display: 'flex',
     flexDirection: 'column',
@@ -58,4 +58,4 @@ function AddAnimal(props) {
   );
 }
 
-export default AddAnimal;
+export default AddAnimalForm;

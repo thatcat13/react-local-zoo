@@ -1,6 +1,6 @@
 import React from 'react';
 import AnimalList from './AnimalList';
-import AddAnimal from './AddAnimal';
+import AddAnimalForm from './AddAnimalForm';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
 
