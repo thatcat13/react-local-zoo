@@ -16,7 +16,7 @@ class App extends React.Component {
     this.handleAddingNewAnimalToList = this.handleAddingNewAnimalToList.bind(this);
   }
 
-  handleAddingNewAnimalToList(newAniml){
+  handleAddingNewAnimalToList(newAnimal){
     let newAnimalId = v4()
     let newMasterAnimalList = Object.assign({}, this.state.masterAnimalList, {
       [newAnimalId]: newAnimal
@@ -24,7 +24,7 @@ class App extends React.Component {
     //{} is the TARGET, the object being created
     //this.state.masterAnimalList is the 1st SOURCE object, or the data to put into the TARGET; this one is a SLICE of state, the NEW animal to be piled on top of the existing animal list
     //{[newAnimalId: newAnimal]} is the 2nd SOURCE object that's a key-value pair
-    this.setState({masterTicketList: newMasterTicketList});
+    newMasterAnimalList[newAnimalId] = this.setState({masterAnimalList: newMasterAnimalList});
   }
 
   render() {
@@ -49,13 +49,14 @@ class App extends React.Component {
           <Route exact path='/' render={()=><AnimalList animalList={this.state.masterAnimalList} />} />
           //here I'm providing masterAnimalList as a prop to AnimalList
           //access the list by calling this.state.masterAnimalList (it's now a state value)
-          //prop is 'ticketList' in TicketList and state value is called 'masterTicketList' in App
-          <Route path='/addanimalform' render={()=><AddAnimalForm onNewAnimalCreation={this.handleAddingNewAnimalToList} />} />
+          //prop is 'animalList' in AnimalList and state value is called 'masterAnimalList' in App
+          <Route path='/addanimalform' render={()=><AddAnimalForm onNewAnimalCreation= {this.handleAddingNewAnimalToList} />} />
           <Route component={Error404} />
         </Switch>
       </div>
     );
   }
 }
+
 
 export default App;
