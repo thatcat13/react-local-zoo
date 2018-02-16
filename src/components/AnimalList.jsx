@@ -19,13 +19,6 @@ function AnimalList(props) {
     margin: 50
   };
 
-  function DeleteAnimal(props) {
-    let animalToBeDeleted = null;
-    if (props.selectedAnimal != null){
-      animalToBeDeleted =  <Animal
-        selectedAnimal={props.animalList[props.selectedAnimal]}/>;
-    }
-  }
   return (
     <div>
       <div style={mainListContainer}>
@@ -47,8 +40,8 @@ function AnimalList(props) {
               dislikes={animal.dislikes}
               key={animal.id}
               onAnimalSelection={props.onAnimalSelection}
-              <button onClick={DeleteAnimal}>Delete Animal</button>
               />;
+            <button onClick={onAnimalSelection}>Delete Animal</button>
           })}
         </div>
       </div>

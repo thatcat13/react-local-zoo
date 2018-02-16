@@ -41,6 +41,7 @@ class App extends React.Component {
       //masterAnimalList is an object instead of an array;
     };
     this.handleAddingNewAnimalToList = this.handleAddingNewAnimalToList.bind(this);
+    this.handleDeletingSelectedAnimal = this.handleDeletingSelectedAnimal.bind(this);
   }
 
   handleAddingNewAnimalToList(newAnimal){
@@ -56,8 +57,14 @@ class App extends React.Component {
     this.setState({masterAnimalList: newMasterAnimalList});
   }
 
-  handleDeletingSelectedAnimal(animalId){
-    this.setState({selectedAnimal: animalId});
+  handleDeletingSelectedAnimal(deletedAnimal){
+    let deletedAnimalList = Object.assign({}, this.state.masterAnimalList, {
+      [newAnimalId]: deletedAnimal
+    });
+
+
+
+    this.setState({masterAnimalList: deletedAnimalList});
   }
 
   render() {
