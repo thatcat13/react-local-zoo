@@ -7,7 +7,7 @@ function AddAnimalForm(props) {
   function handleNewAnimalFormSubmission(event) {
     event.preventDefault();
     props.onNewAnimalCreation({latinName: _latinName.value, commonName: _commonName.value, animalName: _animalName.value, age: _age.value, diet: _diet.value, housing: _housing.value, caretakers: _caretakers.value, sex: _sex.value, likes: _likes.value, dislikes: _dislikes.value});
-
+    //'onNewAnimalCreation()' function passed from stateful parent gets called back here in handleNewAnimalFormSubmission() method; form is filled out, info is grabbed from user as refs, and the submit button is clicked'
     _latinName.value = '';
     _commonName.value = '';
     _animalName.value = '';
