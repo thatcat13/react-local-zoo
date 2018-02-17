@@ -57,11 +57,17 @@ class App extends React.Component {
     this.setState({masterAnimalList: newMasterAnimalList});
   }
 
+  handleSelectedAnimal(animalId){
+    this.setState({selectedAnimal: animalId});
+  }
+
   handleDeletingSelectedAnimal(deletedAnimal){
-    let deletedAnimalList = Object.assign({}, this.state.masterAnimalList, {
-      [newAnimalId]: deletedAnimal
+    let deletedAnimalId = this.selectedAnimal[this.animal.id];
+    let deletedAnimalList = Object.assign({}, this.state.masterAnimalList.slice(), {
+      [deletedAnimalId]: deletedAnimal
     });
 
+    delete this.state.masterAnimalList[deletedAnimal];
 
 
     this.setState({masterAnimalList: deletedAnimalList});

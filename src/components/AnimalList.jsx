@@ -41,7 +41,7 @@ function AnimalList(props) {
               key={animal.id}
               onAnimalSelection={props.onAnimalSelection}
               />;
-            <button onClick={onAnimalSelection}>Delete Animal</button>
+            <button onClick={selectedAnimal}>Delete Animal</button>
           })}
         </div>
       </div>
