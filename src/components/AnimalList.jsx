@@ -26,6 +26,7 @@ function AnimalList(props) {
           <h1>Current Residents:</h1>
           {Object.keys(props.animalList).map(function(animalId) {
             let animal = props.animalList[animalId];
+            let selectedAnimal = props.selectedAnimal[animalId];
             //animalList is passed as props as an object representing state value of masterAnimalList from App; AnimalList function will .map through the object using the UUIDs and set animal variable equal to the object value of each unique animal
             //return value to be rendered will be the key-value pairs contained within each object as list items
             return <Animal latinName={animal.latinName}
@@ -40,8 +41,7 @@ function AnimalList(props) {
               dislikes={animal.dislikes}
               key={animal.id}
               onAnimalSelection={props.onAnimalSelection}
-              />;
-            <button onClick={selectedAnimal}>Delete Animal</button>
+            />;
           })}
         </div>
       </div>

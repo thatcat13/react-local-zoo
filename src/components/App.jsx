@@ -41,6 +41,7 @@ class App extends React.Component {
       //masterAnimalList is an object instead of an array;
     };
     this.handleAddingNewAnimalToList = this.handleAddingNewAnimalToList.bind(this);
+    this.handleSelectedAnimal = this.handleSelectedAnimal.bind(this);
     this.handleDeletingSelectedAnimal = this.handleDeletingSelectedAnimal.bind(this);
   }
 
@@ -67,7 +68,7 @@ class App extends React.Component {
       [deletedAnimalId]: deletedAnimal
     });
 
-    delete this.state.masterAnimalList[deletedAnimal];
+    delete this.state.masterAnimalList[deletedAnimal]
 
 
     this.setState({masterAnimalList: deletedAnimalList});
