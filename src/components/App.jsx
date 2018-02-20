@@ -56,6 +56,7 @@ class App extends React.Component {
 
   handleDeletingAnimalFromList(animalId){
     let newMasterAnimalList = this.state.masterAnimalList;
+    console.log(newMasterAnimalList);
     delete newMasterAnimalList[animalId];
     this.setState({masterAnimalList: newMasterAnimalList});
   }

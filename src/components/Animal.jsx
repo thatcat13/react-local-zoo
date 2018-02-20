@@ -6,6 +6,18 @@ function Animal(props){
     listStyle: 'none',
     padding: 0
   };
+  const buttonStyle = {
+    width: '110px',
+    height: '40px',
+    backgroundColor: '#fad605',
+    color: '#9b0812',
+    fontSize: '0.9em',
+    fontWeight: 'bolder',
+    borderRadius: '10px',
+    border: 'none',
+    marginTop: '5px',
+    marginBottom: '5px'
+  };
 
 
   const animalInformation =
@@ -21,7 +33,7 @@ function Animal(props){
         <li>Sex: {props.sex}</li>
         <li>Likes: {props.likes}</li>
         <li>Dislikes: {props.dislikes}</li>
-        <button onClick={function() {
+        <button style={buttonStyle} onClick={function() {
           return props.onDeleteAnimal(props.animalId);}
         }>Delete Animal</button>
       </ul>
