@@ -2,6 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Animal(props){
+
+  function deleteAnimal(event) {
+    event.preventDefault();
+    props.onDeleteAnimal(props.animalId);
+  }
   const animalListStyle = {
     listStyle: 'none',
     padding: 0
@@ -33,9 +38,8 @@ function Animal(props){
         <li>Sex: {props.sex}</li>
         <li>Likes: {props.likes}</li>
         <li>Dislikes: {props.dislikes}</li>
-        <button style={buttonStyle} onClick={function() {
-          return props.onDeleteAnimal(props.animalId);}
-        }>Delete Animal</button>
+        <button style={buttonStyle} onClick={deleteAnimal}
+        >Delete Animal</button>
       </ul>
       <hr/>
     </div>;
