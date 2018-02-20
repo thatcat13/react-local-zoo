@@ -36,13 +36,11 @@ class App extends React.Component {
           likes: 'all things twee',
           dislikes: 'terrible color palettes'
         }
-      },
-      selectedAnimal: null
+      }
       //masterAnimalList is an object instead of an array;
     };
     this.handleAddingNewAnimalToList = this.handleAddingNewAnimalToList.bind(this);
-    this.handleSelectedAnimal = this.handleSelectedAnimal.bind(this);
-    this.handleDeletingSelectedAnimal = this.handleDeletingSelectedAnimal.bind(this);
+    // this.handleDeletingSelectedAnimal = this.handleDeletingSelectedAnimal.bind(this);
   }
 
   handleAddingNewAnimalToList(newAnimal){
@@ -58,20 +56,8 @@ class App extends React.Component {
     this.setState({masterAnimalList: newMasterAnimalList});
   }
 
-  handleSelectedAnimal(animalId){
-    this.setState({selectedAnimal: animalId});
-  }
-
   handleDeletingSelectedAnimal(deletedAnimal){
-    let deletedAnimalId = this.selectedAnimal[this.animal.id];
-    let deletedAnimalList = Object.assign({}, this.state.masterAnimalList.slice(), {
-      [deletedAnimalId]: deletedAnimal
-    });
 
-    delete this.state.masterAnimalList[deletedAnimal]
-
-
-    this.setState({masterAnimalList: deletedAnimalList});
   }
 
   render() {
@@ -98,7 +84,7 @@ class App extends React.Component {
           //here I'm providing masterAnimalList as a prop to AnimalList
           //access the list by calling this.state.masterAnimalList (it's now a state value)
           //prop is 'animalList' in AnimalList and state value is called 'masterAnimalList' in App
-          <Route path='/addanimalform' render={()=><AddAnimalForm onNewAnimalCreation= {this.handleAddingNewAnimalToList} onAnimalSelection={this.handleDeletingSelectedAnimal} selectedAnimal={this.state.selectedAnimal} />} />
+          <Route path='/addanimalform' render={()=><AddAnimalForm onNewAnimalCreation= {this.handleAddingNewAnimalToList} />} />
 
           <Route component={Error404} />
         </Switch>
