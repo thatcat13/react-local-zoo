@@ -40,24 +40,28 @@ class App extends React.Component {
       //masterAnimalList is an object instead of an array;
     };
     this.handleAddingNewAnimalToList = this.handleAddingNewAnimalToList.bind(this);
-    // this.handleDeletingSelectedAnimal = this.handleDeletingSelectedAnimal.bind(this);
+    this.handleDeletingAnimalFromList = this.handleDeletingAnimalFromList.bind(this);
   }
 
   handleAddingNewAnimalToList(newAnimal){
-    let newAnimalId = v4();
+    let animalId = v4();
     let newMasterAnimalList = Object.assign({}, this.state.masterAnimalList, {
-      [newAnimalId]: newAnimal
+      [animalId]: newAnimal
     });
     //{} is the TARGET, the object being created
-
     //this.state.masterAnimalList is the 1st SOURCE object, or the data to put into the TARGET; this one is a SLICE of state, the NEW animal to be piled on top of the existing animal list
-
     //{[newAnimalId: newAnimal]} is the 2nd SOURCE object that's a key-value pair
+    console.log(newMasterAnimalList);
     this.setState({masterAnimalList: newMasterAnimalList});
+    console.log(this.state.masterAnimalList);
   }
 
-  handleDeletingSelectedAnimal(deletedAnimal){
-
+  handleDeletingAnimalFromList(animalId){
+    console.log(this.state.masterAnimalList[0]);
+    let newMasterAnimalList = Object.assign({},
+    this.state.masterAnimalList);
+    delete newMasterAnimalList[animalId];
+    this.setState({masterAnimalList: newMasterAnimalList});
   }
 
   render() {
@@ -80,7 +84,7 @@ class App extends React.Component {
         }</style>
         <Header />
         <Switch>
-          <Route exact path='/' render={()=><AnimalList animalList={this.state.masterAnimalList} />} />
+          <Route exact path='/' render={()=><AnimalList animalList={this.state.masterAnimalList} onDeleteAnimal={this.handleDeletingAnimalFromList}/>} />
           //here I'm providing masterAnimalList as a prop to AnimalList
           //access the list by calling this.state.masterAnimalList (it's now a state value)
           //prop is 'animalList' in AnimalList and state value is called 'masterAnimalList' in App

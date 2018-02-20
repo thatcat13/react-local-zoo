@@ -19,6 +19,9 @@ function AnimalList(props) {
     margin: 50
   };
 
+  function handleAnimalDelete(){
+    props.onDeleteAnimal(props.animalId);
+  }
   return (
     <div>
       <div style={mainListContainer}>
@@ -28,29 +31,32 @@ function AnimalList(props) {
             let animal = props.animalList[animalId];
             //animalList is passed as props as an object representing state value of masterAnimalList from App; AnimalList function will .map through the object using the UUIDs and set animal variable equal to the object value of each unique animal
             //return value to be rendered will be the key-value pairs contained within each object as list items
-            return
-              <div>
-                <Animal latinName={animal.latinName}
-                    commonName={animal.commonName}
-                    animalName={animal.animalName}
-                    age={animal.age}
-                    diet={animal.diet}
-                    housing={animal.housing}
-                    caretakers={animal.caretakers}
-                    sex={animal.sex}
-                    likes={animal.likes}
-                    dislikes={animal.dislikes}
-                    key={animal.id}/>
-                <button type='submit'>Delete Animal</button>
-              </div>
-            )})
+            return <div>
+              <button onClick={handleAnimalDelete}>Delete Animal</button><Animal latinName={animal.latinName}
+              commonName={animal.commonName}
+              animalName={animal.animalName}
+              age={animal.age}
+              diet={animal.diet}
+              housing={animal.housing}
+              caretakers={animal.caretakers}
+              sex={animal.sex}
+              likes={animal.likes}
+              dislikes={animal.dislikes}
+              animalId={animalId}
+              key={animalId}
+              onDeleteAnimal={props.handleDeletingAnimalFromList}/>
+            </div>
+            })
+          }
         </div>
       </div>
-    </div>
-);
+    </div>//main div
+  );
+}
 
 AnimalList.propTypes = {
-  animalList: PropTypes.object
+  animalList: PropTypes.object,
+  onDeleteAnimal: PropTypes.func.isRequired
 };
 
 export default AnimalList;

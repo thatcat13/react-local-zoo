@@ -7,6 +7,7 @@ function Animal(props){
     padding: 0
   };
 
+
   const animalInformation =
     <div>
       <ul style={animalListStyle}>
