@@ -25,16 +25,16 @@ class App extends React.Component {
           dislikes: 'terrible color palettes'
         },
         1: {
-          latinName: 'Mustela Nivalis',
-          commonName: 'Common Weasel',
-          animalName: 'Wes Anderson',
-          age: 5,
-          diet: 'herbivore',
-          housing: 'American Film Director Zone',
-          caretakers: 0,
+          latinName: 'Talpa Europa',
+          commonName: 'European Mole',
+          animalName: 'Mole',
+          age: 1,
+          diet: 'carnivore',
+          housing: 'Underground Zone',
+          caretakers: 2,
           sex: 'M',
-          likes: 'all things twee',
-          dislikes: 'terrible color palettes'
+          likes: 'earthworms',
+          dislikes: 'bright lights'
         }
       }
       //masterAnimalList is an object instead of an array;
@@ -51,15 +51,11 @@ class App extends React.Component {
     //{} is the TARGET, the object being created
     //this.state.masterAnimalList is the 1st SOURCE object, or the data to put into the TARGET; this one is a SLICE of state, the NEW animal to be piled on top of the existing animal list
     //{[newAnimalId: newAnimal]} is the 2nd SOURCE object that's a key-value pair
-    console.log(newMasterAnimalList);
     this.setState({masterAnimalList: newMasterAnimalList});
-    console.log(this.state.masterAnimalList);
   }
 
   handleDeletingAnimalFromList(animalId){
-    console.log(this.state.masterAnimalList[0]);
-    let newMasterAnimalList = Object.assign({},
-    this.state.masterAnimalList);
+    let newMasterAnimalList = this.state.masterAnimalList;
     delete newMasterAnimalList[animalId];
     this.setState({masterAnimalList: newMasterAnimalList});
   }

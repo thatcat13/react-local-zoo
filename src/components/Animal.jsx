@@ -21,6 +21,9 @@ function Animal(props){
         <li>Sex: {props.sex}</li>
         <li>Likes: {props.likes}</li>
         <li>Dislikes: {props.dislikes}</li>
+        <button onClick={function() {
+          return props.onDeleteAnimal(props.animalId);}
+        }>Delete Animal</button>
       </ul>
       <hr/>
     </div>;
@@ -43,7 +46,8 @@ Animal.propTypes = {
   sex: PropTypes.string,
   likes: PropTypes.string,
   dislikes: PropTypes.string,
-  animalId: PropTypes.string.isRequired
+  animalId: PropTypes.string.isRequired,
+  onDeleteAnimal: PropTypes.func
 };
 
 export default Animal;
